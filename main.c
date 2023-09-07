@@ -678,11 +678,9 @@ int main(int argc, char *argv[])
     printf("==========================================================================\n\n");
 
 #if 0
-    bandwidth_bench(threads, dstbuf, srcbuf, tmpbuf, bufsize, BLOCKSIZE, " ", c_benchmarks);
+    bandwidth_bench(threads, dstbuf, srcbuf, tmpbuf, bufsize, BLOCKSIZE/2, " ", libc_benchmarks);
     printf(" ---\n");
 #endif
-    bandwidth_bench(threads, dstbuf, srcbuf, tmpbuf, bufsize, BLOCKSIZE, " ", c_unaligned_benchmarks);
-    printf(" ---\n");
     bandwidth_bench(threads, dstbuf, srcbuf, tmpbuf, bufsize, BLOCKSIZE/2, " ", libc_benchmarks);
     bench_info *bi = get_asm_benchmarks();
     if (bi->f) {
